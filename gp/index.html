@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+
+<title>Băng hải tặc Gâu Đen</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap');
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* THEME */
+:root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --text: #111111;
+    --muted: #888888;
+    --card: #fafafa;
+    --border: rgba(0, 0, 0, .09);
+    --accent: #dc2626;
+    --hover-bg: rgba(220, 38, 38, .045);
+    --line: #dddddd;
+}
+
+body.dark {
+    color-scheme: dark;
+    --bg: #111111;
+    --text: #ffffff;
+    --muted: #888888;
+    --card: rgba(255, 255, 255, .035);
+    --border: rgba(255, 255, 255, .10);
+    --accent: #ff4545;
+    --hover-bg: rgba(255, 69, 69, .08);
+    --line: #444444;
+}
+
+/* BODY */
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow-x: hidden;
+
+    transition:
+        background .3s ease,
+        color .3s ease;
+}
+
+/* MAIN */
+.container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    padding: 70px 20px 40px;
+    text-align: center;
+}
+
+/* THEME TOGGLE */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 0;
+
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--card);
+    color: var(--text);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .2s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.06);
+}
+
+.toggle-icon {
+    position: absolute;
+    font-size: 21px;
+    line-height: 1;
+    transition: opacity .2s ease, transform .2s ease;
+}
+
+.moon {
+    opacity: 0;
+    transform: rotate(-45deg) scale(.5);
+}
+
+.sun {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+body.dark .moon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+body.dark .sun {
+    opacity: 0;
+    transform: rotate(45deg) scale(.5);
+}
+
+/* SMALL TITLE */
+.small-title {
+    margin-bottom: 30px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* GROUP NAME */
+.group-name {
+    padding: .12em 0;
+    color: var(--accent);
+
+    font-size: clamp(42px, 9vw, 100px);
+    font-weight: 900;
+    line-height: 1.08;
+    letter-spacing: -2px;
+
+    overflow-wrap: anywhere;
+}
+
+/* DIVIDER */
+.line {
+    width: 70px;
+    height: 2px;
+    margin: 28px auto 0;
+    background: var(--line);
+    transition: background .3s ease;
+}
+
+/* MEMBERS */
+.members {
+    width: 100%;
+    max-width: 460px;
+    margin: 28px auto 0;
+    text-align: left;
+}
+
+.members-title {
+    margin-bottom: 14px;
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+    text-align: center;
+}
+
+.members-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.member {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+
+    padding: 13px 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--card);
+
+    transition:
+        border-color .2s ease,
+        background .2s ease,
+        transform .2s ease;
+}
+
+.member:hover {
+    border-color: var(--accent);
+    background: var(--hover-bg);
+    transform: translateY(-2px);
+}
+
+.member-number {
+    flex-shrink: 0;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.member-name {
+    min-width: 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 80px 15px 30px;
+    }
+
+    .theme-toggle {
+        width: 44px;
+        height: 44px;
+        top: 15px;
+        right: 15px;
+    }
+
+    .small-title {
+        margin-bottom: 24px;
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .group-name {
+        font-size: clamp(36px, 10vw, 65px);
+        letter-spacing: -1px;
+    }
+
+    .line {
+        margin-top: 24px;
+    }
+
+    .members {
+        margin-top: 22px;
+    }
+
+    .members-list {
+        gap: 8px;
+    }
+
+    .member {
+        gap: 7px;
+        padding: 11px 9px;
+        border-radius: 10px;
+    }
+
+    .member-name {
+        font-size: 11px;
+    }
+
+    .member-number {
+        font-size: 10px;
+    }
+}
+
+/* SMALL PHONES */
+@media (max-width: 360px) {
+    .members-list {
+        grid-template-columns: 1fr;
+    }
+
+    .member {
+        padding: 12px;
+    }
+
+    .member-name {
+        font-size: 12px;
+    }
+}
+
+/* REDUCE MOTION */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+<main class="container">
+
+    <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Chuyển sang giao diện tối"
+        aria-pressed="false"
+    >
+        <span class="toggle-icon moon" aria-hidden="true">☾</span>
+        <span class="toggle-icon sun" aria-hidden="true">☀</span>
+    </button>
+
+    <div class="small-title">
+        11A1 · THE CREW
+    </div>
+
+    <h1 class="group-name">
+        BĂNG HẢI TẶC<br>
+        GÂU ĐEN
+    </h1>
+
+    <div class="line"></div>
+
+    <section class="members" aria-label="Danh sách thành viên">
+        <div class="members-title">
+            THE TEAM · 11A1
+        </div>
+
+        <div class="members-list">
+            <div class="member">
+                <span class="member-number">01</span>
+                <span class="member-name">Nguyễn Ngọc Huyền My</span>
+            </div>
+
+            <div class="member">
+                <span class="member-number">02</span>
+                <span class="member-name">Phan Đình Khoa</span>
+            </div>
+
+            <div class="member">
+                <span class="member-number">03</span>
+                <span class="member-name">Nguyễn Hoàng Vinh</span>
+            </div>
+
+            <div class="member">
+                <span class="member-number">04</span>
+                <span class="member-name">Huỳnh Nhật Hòa</span>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script>
+const themeToggle = document.getElementById('themeToggle');
+
+function setTheme(theme) {
+    const isDark = theme === 'dark';
+
+    document.body.classList.toggle('dark', isDark);
+
+    themeToggle.setAttribute('aria-pressed', String(isDark));
+    themeToggle.setAttribute(
+        'aria-label',
+        isDark ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối'
+    );
+
+    document.querySelector('meta[name="theme-color"]')
+        .setAttribute('content', isDark ? '#111111' : '#ffffff');
+
+    try {
+        localStorage.setItem('team-theme', theme);
+    } catch (error) {
+        // Giao diện vẫn hoạt động nếu localStorage bị chặn.
+    }
+}
+
+themeToggle.addEventListener('click', () => {
+    const isDark = document.body.classList.contains('dark');
+    setTheme(isDark ? 'light' : 'dark');
+});
+
+// Mặc định nền trắng, chỉ dùng dark mode nếu người dùng đã lưu.
+try {
+    const savedTheme = localStorage.getItem('team-theme');
+
+    if (savedTheme === 'dark' || savedTheme === 'light') {
+        setTheme(savedTheme);
+    }
+} catch (error) {
+    // Mặc định giao diện sáng.
+}
+</script>
+</body>
+</html>
