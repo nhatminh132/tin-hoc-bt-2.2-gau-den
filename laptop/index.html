@@ -1,0 +1,1184 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Lenovo Legion 5 15AHP10 - Ryzen 7 260, RTX 5060, OLED 165Hz.">
+  <title>Lenovo Legion 5 15AHP10 | Gaming Laptop</title>
+
+  <style>
+    :root {
+      --red: #e2231a;
+      --red-dark: #b91c1c;
+      --text: #202024;
+      --muted: #707078;
+      --bg: #ffffff;
+      --surface: #f7f7f8;
+      --border: #e8e8eb;
+      --green: #16834b;
+      --shadow: 0 12px 35px rgba(20, 20, 30, .06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin-inline: auto;
+    }
+
+    /* HEADER */
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .navbar {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--red);
+      font-size: 1.15rem;
+      font-weight: 950;
+      letter-spacing: -.7px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: .9rem;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 19px;
+      border: 1px solid transparent;
+      border-radius: 10px;
+      background: var(--red);
+      color: white;
+      font-size: .92rem;
+      font-weight: 750;
+      transition: background .2s, transform .2s, box-shadow .2s;
+    }
+
+    .button:hover {
+      background: var(--red-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(226, 35, 26, .2);
+    }
+
+    .button-outline {
+      background: white;
+      color: var(--text);
+      border-color: var(--border);
+    }
+
+    .button-outline:hover {
+      background: var(--surface);
+      color: var(--red);
+      border-color: var(--red);
+      box-shadow: none;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 58px 0 65px;
+    }
+
+    .breadcrumb {
+      color: var(--muted);
+      font-size: .83rem;
+      margin-bottom: 28px;
+    }
+
+    .breadcrumb span {
+      color: var(--red);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 52px;
+    }
+
+    .eyebrow {
+      color: var(--red);
+      font-size: .76rem;
+      font-weight: 850;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 14px 0 20px;
+      color: var(--red);
+      font-size: clamp(2.4rem, 5vw, 4.3rem);
+      font-weight: 900;
+      letter-spacing: -2.5px;
+      line-height: 1.08;
+    }
+
+    .hero-description {
+      max-width: 510px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .hero-description strong {
+      color: var(--text);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 27px;
+    }
+
+    .price-block {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .price {
+      color: var(--red);
+      font-size: 2rem;
+      font-weight: 950;
+      letter-spacing: -1px;
+      line-height: 1.2;
+    }
+
+    .price-caption {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    /* IMAGE CAROUSEL: one carousel only */
+
+    .carousel {
+      position: relative;
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: #f3f3f5;
+      box-shadow: var(--shadow);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform .45s cubic-bezier(.22, .7, .25, 1);
+      will-change: transform;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      aspect-ratio: 1.08 / 1;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 50% 50%, #ffffff 0%, #f4f4f6 65%, #ebebee 100%);
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 18px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .slide-caption {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 2;
+      max-width: calc(100% - 36px);
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.75);
+      border-radius: 9px;
+      background: rgba(255,255,255,.9);
+      backdrop-filter: blur(10px);
+      color: var(--text);
+      font-size: .8rem;
+      font-weight: 750;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 5;
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(0,0,0,.08);
+      border-radius: 50%;
+      background: rgba(255,255,255,.92);
+      color: var(--text);
+      font-size: 1.25rem;
+      transform: translateY(-50%);
+      transition: .2s;
+    }
+
+    .carousel-arrow:hover {
+      background: var(--red);
+      color: white;
+    }
+
+    .carousel-arrow.prev {
+      left: 14px;
+    }
+
+    .carousel-arrow.next {
+      right: 14px;
+    }
+
+    .carousel-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 18px;
+      background: white;
+      border-top: 1px solid var(--border);
+    }
+
+    .carousel-count {
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .carousel-dot {
+      width: 7px;
+      height: 7px;
+      border: 0;
+      border-radius: 20px;
+      background: #d1d1d6;
+      transition: width .25s, background .25s;
+    }
+
+    .carousel-dot.active {
+      width: 23px;
+      background: var(--red);
+    }
+
+    /* GENERAL SECTIONS */
+
+    section.content-section {
+      padding: 72px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading h2 {
+      margin: 9px 0 12px;
+      color: var(--text);
+      font-size: clamp(1.8rem, 3.5vw, 2.65rem);
+      font-weight: 900;
+      letter-spacing: -1.3px;
+      line-height: 1.2;
+    }
+
+    .section-heading h2 span {
+      color: var(--red);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+    }
+
+    /* SPECIFICATIONS */
+
+    .specs-section {
+      background: var(--surface);
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .spec-card {
+      padding: 21px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      background: white;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+    }
+
+    .spec-card:hover {
+      border-color: rgba(226, 35, 26, .45);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .spec-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 650;
+    }
+
+    .spec-icon {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: #fff0ef;
+      color: var(--red);
+      font-size: 1rem;
+    }
+
+    .spec-value {
+      color: var(--text);
+      font-size: 1.05rem;
+      font-weight: 850;
+      line-height: 1.4;
+    }
+
+    .spec-detail {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    /* PROS AND CONS */
+
+    .pros-cons {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .review-card {
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: white;
+    }
+
+    .review-title {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 20px;
+      font-size: 1.25rem;
+      font-weight: 850;
+    }
+
+    .review-symbol {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 11px;
+      font-size: 1.15rem;
+    }
+
+    .pros .review-symbol {
+      background: #e8f7ef;
+      color: var(--green);
+    }
+
+    .cons .review-symbol {
+      background: #fff0ef;
+      color: var(--red);
+    }
+
+    .review-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .review-list li {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 9px;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .pros .review-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .cons .review-list li::before {
+      content: "!";
+      display: grid;
+      place-items: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #fff0ef;
+      color: var(--red);
+      font-size: .75rem;
+      font-weight: 900;
+    }
+
+    /* WHY CHOOSE IT */
+
+    .why-section {
+      background: #171719;
+      color: white;
+      border-top: 0 !important;
+    }
+
+    .why-section .section-heading h2 {
+      color: white;
+    }
+
+    .why-section .section-heading p {
+      color: #b7b7bf;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .why-card {
+      padding: 23px;
+      border: 1px solid #343439;
+      border-radius: 14px;
+      background: #202024;
+      transition: border-color .2s, transform .2s;
+    }
+
+    .why-card:hover {
+      border-color: var(--red);
+      transform: translateY(-3px);
+    }
+
+    .why-number {
+      color: var(--red);
+      font-size: .8rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .why-card h3 {
+      margin: 11px 0 8px;
+      color: white;
+      font-size: 1.08rem;
+    }
+
+    .why-card p {
+      color: #b7b7bf;
+      font-size: .9rem;
+    }
+
+    .why-conclusion {
+      margin-top: 23px;
+      padding: 21px 24px;
+      border-left: 3px solid var(--red);
+      border-radius: 0 10px 10px 0;
+      background: #242427;
+      color: #dedee2;
+    }
+
+    .why-conclusion strong {
+      color: white;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 27px 0;
+      border-top: 1px solid var(--border);
+      background: white;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    .footer-brand {
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-copy {
+        order: 1;
+      }
+
+      .carousel {
+        order: 2;
+      }
+
+      .carousel-slide {
+        aspect-ratio: 1.2 / 1;
+      }
+
+      .specs-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .navbar {
+        min-height: 64px;
+      }
+
+      .brand {
+        font-size: 1rem;
+      }
+
+      .nav-buy {
+        padding: 10px 12px;
+        font-size: .82rem;
+      }
+
+      .hero {
+        padding: 32px 0 42px;
+      }
+
+      .breadcrumb {
+        margin-bottom: 20px;
+      }
+
+      h1 {
+        font-size: clamp(2.25rem, 11vw, 3.2rem);
+        letter-spacing: -1.7px;
+      }
+
+      .hero-description {
+        font-size: .95rem;
+      }
+
+      .price {
+        font-size: 1.7rem;
+      }
+
+      .carousel-slide {
+        aspect-ratio: 1 / 1;
+      }
+
+      section.content-section {
+        padding: 48px 0;
+      }
+
+      .specs-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .spec-card {
+        padding: 15px;
+      }
+
+      .spec-value {
+        font-size: .95rem;
+      }
+
+      .spec-detail {
+        font-size: .79rem;
+      }
+
+      .pros-cons,
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .review-card {
+        padding: 21px;
+      }
+
+      .section-heading h2 {
+        font-size: 1.85rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container navbar">
+      <a class="brand" href="#top">LEGION<span> / GAMING</span></a>
+
+      <nav class="nav-links" aria-label="Điều hướng chính">
+        <a href="#specs">Cấu hình</a>
+        <a href="#review">Ưu & nhược điểm</a>
+        <a href="#why">Lý do chọn máy</a>
+      </nav>
+
+      <a
+        class="button nav-buy"
+        href="https://cellphones.com.vn/laptop-lenovo-legion-5-15ahp10-83m00030vn.html"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Xem giá ↗</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO + IMAGE CAROUSEL -->
+    <section class="hero">
+      <div class="container">
+        <div class="breadcrumb">
+          Laptop Gaming / Lenovo / <span>Legion 5 15AHP10</span>
+        </div>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">Power. Precision. Performance.</div>
+
+            <h1>Lenovo<br>Legion 5<br>15AHP10</h1>
+
+            <p class="hero-description">
+              Chiến game và xử lý công việc nặng với
+              <strong>AMD Ryzen 7 260</strong>,
+              <strong>RTX 5060 8GB</strong> và màn hình
+              <strong>OLED WQXGA 165Hz</strong>.
+              Một chiếc laptop hướng đến người cần hiệu năng cao
+              nhưng vẫn quan tâm đến tính di động.
+            </p>
+
+            <div class="hero-actions">
+              <a
+                class="button"
+                href="https://cellphones.com.vn/laptop-lenovo-legion-5-15ahp10-83m00030vn.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >Mua tại CellphoneS ↗</a>
+
+              <a class="button button-outline" href="#specs">
+                Xem cấu hình ↓
+              </a>
+            </div>
+
+            <div class="price-block">
+              <div class="price">40.690.000₫</div>
+              <div class="price-caption">
+                Giá tham khảo<br>
+                Lenovo Legion 5 83M00030VN
+              </div>
+            </div>
+          </div>
+
+          <!-- Chỉ có MỘT carousel ảnh trên toàn trang.
+               Thay URL placeholder bằng đường dẫn ảnh thật. -->
+          <div class="carousel" id="product-carousel" aria-label="Ảnh sản phẩm">
+            <div class="carousel-track" id="carousel-track">
+
+              <div class="carousel-slide">
+                <img
+                  src="https://cdn2.cellphones.com.vn/x/media/catalog/product/t/e/text_ng_n_4__8_99.png"
+                  alt="Ảnh tổng thể Lenovo Legion 5"
+                  fetchpriority="high"
+                >
+                <div class="slide-caption">Lenovo Legion 5 · Tổng thể</div>
+              </div>
+
+              <div class="carousel-slide">
+                <img
+                  src="https://cdn2.cellphones.com.vn/x/media/catalog/product/l/a/laptop_lenovo_legion_5_15ahp10_83m00030vn_-_3.png"
+                  alt="Ảnh màn hình Lenovo Legion 5"
+                  loading="lazy"
+                >
+                <div class="slide-caption">Màn hình OLED 165Hz</div>
+              </div>
+
+              <div class="carousel-slide">
+                <img
+                  src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/l/a/laptop_lenovo_legion_5_15ahp10_83m00030vn_-_1.png"
+                  alt="Ảnh Lenovo Legion 5 và card đồ họa RTX 5060"
+                  loading="lazy"
+                >
+                <div class="slide-caption">Hiệu năng RTX 5060</div>
+              </div>
+
+              <div class="carousel-slide">
+                <img
+                  src="https://cdn2.cellphones.com.vn/insecure/rs:fill:0:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/t/e/text_ng_n_2__10_111.png"
+                  alt="Ảnh thiết kế Lenovo Legion 5"
+                  loading="lazy"
+                >
+                <div class="slide-caption">Thiết kế gaming tối giản</div>
+              </div>
+
+            </div>
+
+            <button
+              class="carousel-arrow prev"
+              id="carousel-prev"
+              type="button"
+              aria-label="Ảnh trước"
+            >‹</button>
+
+            <button
+              class="carousel-arrow next"
+              id="carousel-next"
+              type="button"
+              aria-label="Ảnh tiếp theo"
+            >›</button>
+
+            <div class="carousel-bottom">
+              <span class="carousel-count" id="carousel-count">01 / 04</span>
+              <div class="carousel-dots" id="carousel-dots" aria-label="Chọn ảnh">
+                <button class="carousel-dot active" data-slide="0" aria-label="Ảnh 1"></button>
+                <button class="carousel-dot" data-slide="1" aria-label="Ảnh 2"></button>
+                <button class="carousel-dot" data-slide="2" aria-label="Ảnh 3"></button>
+                <button class="carousel-dot" data-slide="3" aria-label="Ảnh 4"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ONE SPECIFICATIONS SECTION -->
+    <section class="content-section specs-section" id="specs">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Technical specifications</div>
+          <h2>Cấu hình <span>chi tiết</span></h2>
+          <p>
+            Thông số của phiên bản Lenovo Legion 5 15AHP10
+            mã máy 83M00030VN.
+          </p>
+        </div>
+
+        <div class="specs-grid">
+          <article class="spec-card">
+            <div class="spec-label">
+              <span class="spec-icon">⚡</span> Bộ xử lý
+            </div>
+            <div class="spec-value">AMD Ryzen 7 260</div>
+            <div class="spec-detail">Xung nhịp tối đa 5.1GHz</div>
+          </article>
+
+          <article class="spec-card">
+            <div class="spec-label">
+              <span class="spec-icon">▧</span> Card đồ họa
+            </div>
+            <div class="spec-value">NVIDIA RTX 5060</div>
+            <div class="spec-detail">8GB VRAM · Công suất 115W</div>
+          </article>
+
+          <article class="spec-card">
+            <div class="spec-label">
+              <span class="spec-icon">▤</span> Bộ nhớ RAM
+            </div>
+            <div class="spec-value">24GB DDR5</div>
+            <div class="spec-detail">Tốc độ 5600MHz</div>
+          </article>
+
+          <article class="spec-card">
+            <div class="spec-label">
+              <span class="spec-icon">▣</span> Lưu trữ
+            </div>
+            <div class="spec-value">SSD 1TB NVMe</div>
+            <div class="spec-detail">M.2 2242 · PCIe 4.0 x4</div>
+          </article>
+
+          <article class="spec-card">
+            <div class="spec-label">
+              <span class="spec-icon">▱</span> Màn hình
+            </div>
+            <div class="spec-value">15.1 inch OLED</div>
+            <div class="spec-detail">2560 × 1600 · WQXGA · 165Hz</div>
+          </article>
+
+          <article class="spec-card">
+            <div class="spec-label">
+              <span class="spec-icon">◉</span> Pin & sạc
+            </div>
+            <div class="spec-value">80Wh</div>
+            <div class="spec-detail">Bộ sạc công suất 245W</div>
+          </article>
+
+          <article class="spec-card">
+            <div class="spec-label">
+              <span class="spec-icon">◇</span> Thiết kế
+            </div>
+            <div class="spec-value">1.9kg</div>
+            <div class="spec-detail">Độ dày 19.95mm</div>
+          </article>
+
+          <article class="spec-card">
+            <div class="spec-label">
+              <span class="spec-icon">₫</span> Giá tham khảo
+            </div>
+            <div class="spec-value">40.690.000₫</div>
+            <div class="spec-detail">Giá có thể thay đổi theo thời điểm</div>
+          </article>
+
+          <article class="spec-card">
+            <div class="spec-label">
+              <span class="spec-icon">✦</span> Định hướng sử dụng
+            </div>
+            <div class="spec-value">Gaming & sáng tạo</div>
+            <div class="spec-detail">Chơi game, lập trình, đa nhiệm và giải trí</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROS AND CONS ONLY -->
+    <section class="content-section" id="review">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Honest overview</div>
+          <h2>Ưu điểm <span>&</span> nhược điểm</h2>
+          <p>
+            Những điểm đáng cân nhắc trước khi bỏ hơn 40 triệu đồng
+            cho một chiếc laptop gaming.
+          </p>
+        </div>
+
+        <div class="pros-cons">
+          <article class="review-card pros">
+            <h3 class="review-title">
+              <span class="review-symbol">✓</span>
+              Ưu điểm
+            </h3>
+
+            <ul class="review-list">
+              <li>
+                RTX 5060 8GB với công suất 115W, hướng đến trải nghiệm
+                gaming ở độ phân giải cao.
+              </li>
+              <li>
+                Màn hình OLED WQXGA 165Hz có độ tương phản cao,
+                hình ảnh sắc nét và chuyển động mượt.
+              </li>
+              <li>
+                RAM 24GB và SSD 1TB đủ rộng rãi cho nhiều ứng dụng,
+                game và dữ liệu cá nhân.
+              </li>
+              <li>
+                Trọng lượng khoảng 1.9kg tương đối cơ động so với
+                nhiều mẫu laptop gaming hiệu năng cao.
+              </li>
+              <li>
+                Pin 80Wh tạo sự cân bằng giữa dung lượng pin và
+                cấu hình mạnh.
+              </li>
+            </ul>
+          </article>
+
+          <article class="review-card cons">
+            <h3 class="review-title">
+              <span class="review-symbol">!</span>
+              Nhược điểm
+            </h3>
+
+            <ul class="review-list">
+              <li>
+                Giá 40.69 triệu đồng khá cao, nên so sánh khuyến mãi
+                và chính sách bảo hành trước khi mua.
+              </li>
+              <li>
+                Khi chơi game nặng, máy thường cần cắm sạc để đạt
+                hiệu năng cao và thời lượng pin sẽ giảm nhanh.
+              </li>
+              <li>
+                Quạt có thể ồn và nhiệt độ tăng khi CPU, GPU hoạt động
+                ở tải nặng.
+              </li>
+              <li>
+                Màn hình OLED cần sử dụng hợp lý, tránh hiển thị nội dung
+                tĩnh ở độ sáng cao trong thời gian quá dài.
+              </li>
+              <li>
+                Cần kiểm tra cấu hình RAM, khe SSD và thông số chính xác
+                của mã máy trước khi thanh toán.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE THIS LAPTOP -->
+    <section class="content-section why-section" id="why">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Why Legion 5?</div>
+          <h2>Lý do <span>chọn máy</span></h2>
+          <p>
+            Không chỉ nhìn vào cấu hình, chiếc máy này đáng cân nhắc
+            khi các yếu tố hiệu năng, màn hình và tính di động cùng phù hợp
+            với nhu cầu sử dụng.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <article class="why-card">
+            <div class="why-number">01 / PERFORMANCE</div>
+            <h3>Hiệu năng gaming mạnh</h3>
+            <p>
+              Ryzen 7 kết hợp RTX 5060 phù hợp với người chơi game,
+              sử dụng phần mềm đồ họa và cần GPU rời.
+            </p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-number">02 / DISPLAY</div>
+            <h3>Màn hình đáng đầu tư</h3>
+            <p>
+              OLED WQXGA 165Hz vừa có độ phân giải cao, vừa có tần số
+              quét lớn, phục vụ cả giải trí và công việc.
+            </p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-number">03 / MULTITASKING</div>
+            <h3>Đa nhiệm thoải mái</h3>
+            <p>
+              RAM 24GB cùng SSD 1TB tạo không gian phù hợp cho
+              nhiều ứng dụng, game và dự án cùng lúc.
+            </p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-number">04 / PORTABILITY</div>
+            <h3>Hiệu năng trong thân máy gọn</h3>
+            <p>
+              Trọng lượng khoảng 1.9kg giúp việc mang máy đi học,
+              đi làm hoặc di chuyển thuận tiện hơn.
+            </p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-number">05 / LONG-TERM USE</div>
+            <h3>Dùng cho nhiều nhu cầu</h3>
+            <p>
+              Cấu hình không chỉ dành cho game mà còn phù hợp lập trình,
+              học tập, chỉnh sửa nội dung và đa nhiệm.
+            </p>
+          </article>
+
+          <article class="why-card">
+            <div class="why-number">06 / BALANCE</div>
+            <h3>Cân bằng trải nghiệm</h3>
+            <p>
+              Kết hợp GPU rời, màn hình chất lượng, bộ nhớ lớn và
+              thiết kế tương đối gọn trong một thiết bị.
+            </p>
+          </article>
+        </div>
+
+        <div class="why-conclusion">
+          <strong>Kết luận:</strong>
+          Lenovo Legion 5 15AHP10 phù hợp nếu ưu tiên gaming,
+          màn hình OLED chất lượng và hiệu năng đa nhiệm trong một
+          chiếc laptop có thể mang theo. Với mức giá 40.690.000₫,
+          nên kiểm tra giá thực tế, bảo hành và đối chiếu cấu hình
+          đúng mã 83M00030VN trước khi mua.
+        </div>
+
+        <div style="margin-top: 28px;">
+          <a
+            class="button"
+            href="https://cellphones.com.vn/laptop-lenovo-legion-5-15ahp10-83m00030vn.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Xem Lenovo Legion 5 tại CellphoneS ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">LEGION / GAMING</div>
+      <div>Giá và cấu hình có thể thay đổi. Vui lòng xác nhận với nhà bán lẻ.</div>
+    </div>
+  </footer>
+
+  <script>
+    /* PRODUCT IMAGE CAROUSEL */
+    (() => {
+      const carousel = document.getElementById("product-carousel");
+      const track = document.getElementById("carousel-track");
+      const slides = Array.from(track.children);
+      const prevButton = document.getElementById("carousel-prev");
+      const nextButton = document.getElementById("carousel-next");
+      const count = document.getElementById("carousel-count");
+      const dots = Array.from(
+        document.querySelectorAll("#carousel-dots .carousel-dot")
+      );
+
+      let currentIndex = 0;
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      function showSlide(index) {
+        currentIndex = (index + slides.length) % slides.length;
+
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        count.textContent =
+          `${String(currentIndex + 1).padStart(2, "0")} / ` +
+          `${String(slides.length).padStart(2, "0")}`;
+
+        dots.forEach((dot, i) => {
+          dot.classList.toggle("active", i === currentIndex);
+          dot.setAttribute("aria-current", i === currentIndex ? "true" : "false");
+        });
+      }
+
+      prevButton.addEventListener("click", () => {
+        showSlide(currentIndex - 1);
+      });
+
+      nextButton.addEventListener("click", () => {
+        showSlide(currentIndex + 1);
+      });
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", () => {
+          showSlide(Number(dot.dataset.slide));
+        });
+      });
+
+      carousel.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowLeft") showSlide(currentIndex - 1);
+        if (event.key === "ArrowRight") showSlide(currentIndex + 1);
+      });
+
+      carousel.setAttribute("tabindex", "0");
+
+      carousel.addEventListener("touchstart", (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+      }, { passive: true });
+
+      carousel.addEventListener("touchend", (event) => {
+        touchEndX = event.changedTouches[0].clientX;
+        const difference = touchEndX - touchStartX;
+
+        if (Math.abs(difference) > 45) {
+          showSlide(currentIndex + (difference < 0 ? 1 : -1));
+        }
+      }, { passive: true });
+
+      showSlide(0);
+    })();
+  </script>
+</body>
+</html>
