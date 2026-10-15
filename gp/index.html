@@ -18,7 +18,7 @@
     box-sizing: border-box;
 }
 
-/* THEME */
+/* THEME COLORS */
 :root {
     color-scheme: light;
     --bg: #ffffff;
@@ -61,7 +61,7 @@ body {
         color .3s ease;
 }
 
-/* MAIN */
+/* MAIN CONTAINER */
 .container {
     position: relative;
     width: 90%;
@@ -70,7 +70,7 @@ body {
     text-align: center;
 }
 
-/* THEME TOGGLE */
+/* DARK / LIGHT TOGGLE */
 .theme-toggle {
     position: absolute;
     top: 20px;
@@ -78,6 +78,8 @@ body {
 
     width: 48px;
     height: 48px;
+    flex: 0 0 auto;
+
     border: 1px solid var(--border);
     border-radius: 50%;
 
@@ -103,27 +105,32 @@ body {
     position: absolute;
     font-size: 21px;
     line-height: 1;
-    transition: opacity .2s ease, transform .2s ease;
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
 }
 
+/* Light mode: show moon to switch to dark */
 .moon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+.sun {
     opacity: 0;
     transform: rotate(-45deg) scale(.5);
 }
 
-.sun {
-    opacity: 1;
-    transform: rotate(0) scale(1);
-}
-
+/* Dark mode: show sun to switch to light */
 body.dark .moon {
-    opacity: 1;
-    transform: rotate(0) scale(1);
+    opacity: 0;
+    transform: rotate(45deg) scale(.5);
 }
 
 body.dark .sun {
-    opacity: 0;
-    transform: rotate(45deg) scale(.5);
+    opacity: 1;
+    transform: rotate(0) scale(1);
 }
 
 /* SMALL TITLE */
@@ -133,13 +140,14 @@ body.dark .sun {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 2px;
+    transition: color .3s ease;
 }
 
 /* GROUP NAME */
 .group-name {
     padding: .12em 0;
-    color: var(--accent);
 
+    color: var(--accent);
     font-size: clamp(42px, 9vw, 100px);
     font-weight: 900;
     line-height: 1.08;
@@ -157,7 +165,7 @@ body.dark .sun {
     transition: background .3s ease;
 }
 
-/* MEMBERS */
+/* TEAM MEMBERS */
 .members {
     width: 100%;
     max-width: 460px;
@@ -172,6 +180,7 @@ body.dark .sun {
     font-weight: 800;
     letter-spacing: 2.5px;
     text-align: center;
+    transition: color .3s ease;
 }
 
 .members-list {
@@ -187,6 +196,7 @@ body.dark .sun {
     min-width: 0;
 
     padding: 13px 12px;
+
     border: 1px solid var(--border);
     border-radius: 12px;
     background: var(--card);
@@ -230,6 +240,10 @@ body.dark .sun {
         height: 44px;
         top: 15px;
         right: 15px;
+    }
+
+    .toggle-icon {
+        font-size: 19px;
     }
 
     .small-title {
@@ -285,9 +299,11 @@ body.dark .sun {
     }
 }
 
-/* REDUCE MOTION */
+/* ACCESSIBILITY */
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         transition-duration: 0.01ms !important;
     }
 }
@@ -295,8 +311,10 @@ body.dark .sun {
 </head>
 
 <body>
+
 <main class="container">
 
+    <!-- THEME TOGGLE -->
     <button
         class="theme-toggle"
         id="themeToggle"
@@ -308,10 +326,12 @@ body.dark .sun {
         <span class="toggle-icon sun" aria-hidden="true">☀</span>
     </button>
 
+    <!-- CLASS INFORMATION -->
     <div class="small-title">
-        11A1 · THE CREW
+        11A1 · Bài tập 2.2
     </div>
 
+    <!-- GROUP NAME -->
     <h1 class="group-name">
         BĂNG HẢI TẶC<br>
         GÂU ĐEN
@@ -319,12 +339,15 @@ body.dark .sun {
 
     <div class="line"></div>
 
+    <!-- TEAM MEMBERS -->
     <section class="members" aria-label="Danh sách thành viên">
+
         <div class="members-title">
             THE TEAM · 11A1
         </div>
 
         <div class="members-list">
+
             <div class="member">
                 <span class="member-number">01</span>
                 <span class="member-name">Nguyễn Ngọc Huyền My</span>
@@ -344,6 +367,7 @@ body.dark .sun {
                 <span class="member-number">04</span>
                 <span class="member-name">Huỳnh Nhật Hòa</span>
             </div>
+
         </div>
     </section>
 
@@ -351,8 +375,9 @@ body.dark .sun {
 
 <script>
 const themeToggle = document.getElementById('themeToggle');
+const themeColor = document.querySelector('meta[name="theme-color"]');
 
-function setTheme(theme) {
+function setTheme(theme, save = true) {
     const isDark = theme === 'dark';
 
     document.body.classList.toggle('dark', isDark);
@@ -360,34 +385,44 @@ function setTheme(theme) {
     themeToggle.setAttribute('aria-pressed', String(isDark));
     themeToggle.setAttribute(
         'aria-label',
-        isDark ? 'Chuyển sang giao diện sáng' : 'Chuyển sang giao diện tối'
+        isDark
+            ? 'Chuyển sang giao diện sáng'
+            : 'Chuyển sang giao diện tối'
     );
 
-    document.querySelector('meta[name="theme-color"]')
-        .setAttribute('content', isDark ? '#111111' : '#ffffff');
+    themeColor.setAttribute(
+        'content',
+        isDark ? '#111111' : '#ffffff'
+    );
 
-    try {
-        localStorage.setItem('team-theme', theme);
-    } catch (error) {
-        // Giao diện vẫn hoạt động nếu localStorage bị chặn.
+    if (save) {
+        try {
+            localStorage.setItem('team-theme', theme);
+        } catch (error) {
+            // Theme vẫn hoạt động nếu localStorage bị chặn.
+        }
     }
 }
 
+/* Toggle theme */
 themeToggle.addEventListener('click', () => {
     const isDark = document.body.classList.contains('dark');
     setTheme(isDark ? 'light' : 'dark');
 });
 
-// Mặc định nền trắng, chỉ dùng dark mode nếu người dùng đã lưu.
+/*
+ * DEFAULT: LIGHT MODE
+ * Không tự khôi phục theme tối cũ.
+ * Chỉ lựa chọn mới của người dùng mới được ghi nhớ.
+ */
 try {
-    const savedTheme = localStorage.getItem('team-theme');
-
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-        setTheme(savedTheme);
-    }
+    localStorage.removeItem('team-theme');
 } catch (error) {
-    // Mặc định giao diện sáng.
+    // Không ảnh hưởng giao diện.
 }
+
+setTheme('light', false);
 </script>
+
 </body>
 </html>
