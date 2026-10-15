@@ -1,0 +1,646 @@
+```html
+<!-- ==================== END / PHÂN CÔNG & ĐÁNH GIÁ ==================== -->
+
+<section class="team-end light" id="team">
+
+    <div class="team-top">
+        <div>
+            <div class="team-eyebrow">GROUP PROJECT</div>
+            <h2>Phân công <span>&</span> đánh giá</h2>
+        </div>
+
+        <!-- Dark / Light Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Đổi giao diện">
+            <span class="toggle-icon moon">☾</span>
+            <span class="toggle-icon sun">☀</span>
+        </button>
+    </div>
+
+    <div class="team-table">
+
+        <!-- Header -->
+        <div class="team-row team-header">
+            <div>HỌ VÀ TÊN</div>
+            <div>CÔNG VIỆC PHỤ TRÁCH</div>
+            <div>ĐÁNH GIÁ</div>
+        </div>
+
+        <!-- Member 1 -->
+        <div class="team-row">
+            <div class="member">
+                <div class="member-number">01</div>
+                <div>
+                    <strong>Huỳnh Nhật Hòa</strong>
+                </div>
+            </div>
+
+            <div class="work">
+                Tìm hiểu thông tin về máy tính.
+            </div>
+
+            <div class="rating">★★★★★</div>
+        </div>
+
+        <!-- Member 2 -->
+        <div class="team-row">
+            <div class="member">
+                <div class="member-number">02</div>
+                <div>
+                    <strong>Nguyễn Ngọc Huyền My</strong>
+                </div>
+            </div>
+
+            <div class="work">
+                Thiết kế và trình bày nội dung trên Notion.
+            </div>
+
+            <div class="rating">★★★★☆</div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-row">
+            <div class="member">
+                <div class="member-number">03</div>
+                <div>
+                    <strong>Nguyễn Hoàng Vinh</strong>
+                    <small>Nhóm trưởng</small>
+                </div>
+            </div>
+
+            <div class="work">
+                Phụ trách nhóm và tìm hiểu thông tin về điện thoại.
+            </div>
+
+            <div class="rating">★★★★★</div>
+        </div>
+
+        <!-- Member 4 -->
+        <div class="team-row">
+            <div class="member">
+                <div class="member-number">04</div>
+                <div>
+                    <strong>Phan Đình Khoa</strong>
+                </div>
+            </div>
+
+            <div class="work">
+                Tổng hợp thông tin của nhóm.
+            </div>
+
+            <div class="rating">★★★★☆</div>
+        </div>
+
+    </div>
+
+    <!-- END -->
+    <div class="team-end-text">
+        <div class="end-line"></div>
+
+        <div class="end-title">
+            THANK YOU
+        </div>
+
+        <div class="end-subtitle">
+            FOR WATCHING
+        </div>
+
+        <div class="end-line"></div>
+    </div>
+
+</section>
+
+<style>
+
+/* =========================================================
+   TEAM / END SECTION
+   DEFAULT: WHITE BACKGROUND + RED TEXT
+   ========================================================= */
+
+.team-end {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-hover: #fff5f5;
+    --border: rgba(220, 38, 38, .18);
+    --text: #dc2626;
+    --muted: #b91c1c;
+    --accent: #dc2626;
+
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    padding: clamp(55px, 8vw, 110px) clamp(20px, 7vw, 100px);
+
+    background: var(--bg);
+    color: var(--text);
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    transition:
+        background .35s ease,
+        color .35s ease;
+}
+
+/* ================= TOP ================= */
+
+.team-top {
+    max-width: 1250px;
+    margin: 0 auto clamp(40px, 6vw, 70px);
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.team-eyebrow {
+    margin-bottom: 13px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    color: var(--muted);
+}
+
+.team-top h2 {
+    margin: 0;
+
+    font-size: clamp(36px, 6vw, 72px);
+    line-height: .95;
+    letter-spacing: -3px;
+    font-weight: 800;
+}
+
+.team-top h2 span {
+    color: #ef4444;
+}
+
+/* ================= THEME TOGGLE ================= */
+
+.theme-toggle {
+    width: 52px;
+    height: 52px;
+
+    flex: 0 0 auto;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--surface);
+    color: var(--text);
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    transition:
+        background .3s ease,
+        border .3s ease,
+        transform .2s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.06);
+}
+
+.toggle-icon {
+    position: absolute;
+
+    font-size: 21px;
+    line-height: 1;
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+.theme-toggle .sun {
+    opacity: 0;
+    transform: rotate(-45deg) scale(.5);
+}
+
+/* ================= TABLE ================= */
+
+.team-table {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    border-top: 1px solid var(--border);
+}
+
+.team-row {
+    display: grid;
+
+    grid-template-columns:
+        minmax(210px, .85fr)
+        minmax(300px, 2fr)
+        minmax(110px, .45fr);
+
+    align-items: center;
+
+    border-bottom: 1px solid var(--border);
+
+    transition:
+        background .25s ease,
+        border .35s ease;
+}
+
+/* Header */
+
+.team-header {
+    min-height: 55px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+/* Member rows */
+
+.team-row:not(.team-header) {
+    min-height: 115px;
+}
+
+.team-row:not(.team-header):hover {
+    background: var(--surface-hover);
+}
+
+/* ================= MEMBER ================= */
+
+.member {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 20px 24px;
+}
+
+.member-number {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    flex-shrink: 0;
+}
+
+.member strong {
+    display: block;
+
+    color: var(--text);
+
+    font-size: 14px;
+    font-weight: 650;
+
+    line-height: 1.4;
+}
+
+.member small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+    letter-spacing: .3px;
+}
+
+/* ================= WORK ================= */
+
+.work {
+    padding: 22px 24px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.work strong {
+    color: var(--text);
+    font-weight: 600;
+}
+
+/* ================= RATING ================= */
+
+.rating {
+    padding: 20px 24px;
+
+    color: var(--text);
+
+    font-size: 15px;
+    letter-spacing: 3px;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+/* ================= END ================= */
+
+.team-end-text {
+    max-width: 1250px;
+
+    margin: clamp(90px, 13vw, 170px) auto 0;
+
+    text-align: center;
+}
+
+.end-line {
+    width: 100%;
+    height: 1px;
+
+    background: var(--border);
+
+    margin: 0 0 45px;
+}
+
+.end-title {
+    font-size: clamp(42px, 9vw, 105px);
+
+    line-height: .85;
+
+    font-weight: 900;
+
+    letter-spacing: -5px;
+}
+
+.end-subtitle {
+    margin-top: 14px;
+
+    color: var(--muted);
+
+    font-size: clamp(12px, 1.5vw, 17px);
+
+    font-weight: 700;
+
+    letter-spacing: 7px;
+}
+
+.team-end-text .end-line:last-child {
+    margin: 45px 0 0;
+}
+
+/* =========================================================
+   LIGHT MODE: WHITE + RED
+   ========================================================= */
+
+.team-end.light {
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-hover: #fff5f5;
+    --border: rgba(220, 38, 38, .18);
+    --text: #dc2626;
+    --muted: #b91c1c;
+    --accent: #dc2626;
+}
+
+.team-end.light .team-top h2 span {
+    color: #ef4444;
+}
+
+.team-end.light .theme-toggle .moon {
+    opacity: 0;
+    transform: rotate(45deg) scale(.5);
+}
+
+.team-end.light .theme-toggle .sun {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+/* =========================================================
+   DARK MODE: BLACK + WHITE
+   ========================================================= */
+
+.team-end:not(.light) {
+    --bg: #050505;
+    --surface: #0d0d0d;
+    --surface-hover: #171717;
+    --border: rgba(255, 255, 255, .10);
+    --text: #ffffff;
+    --muted: #a0a0a0;
+    --accent: #ffffff;
+}
+
+.team-end:not(.light) .team-top h2 span {
+    color: #777777;
+}
+
+.team-end:not(.light) .theme-toggle .sun {
+    opacity: 0;
+    transform: rotate(-45deg) scale(.5);
+}
+
+.team-end:not(.light) .theme-toggle .moon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+/* Laptop / tablet */
+
+@media (max-width: 900px) {
+
+    .team-row {
+        grid-template-columns:
+            minmax(180px, .9fr)
+            minmax(250px, 1.7fr)
+            100px;
+    }
+
+    .member {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .work {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .rating {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* Phone */
+
+@media (max-width: 680px) {
+
+    .team-end {
+        padding: 55px 18px 70px;
+    }
+
+    .team-top {
+        align-items: center;
+    }
+
+    .team-top h2 {
+        font-size: 40px;
+        letter-spacing: -2px;
+    }
+
+    .theme-toggle {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Hide desktop table header */
+
+    .team-header {
+        display: none;
+    }
+
+    /* Stacked member cards */
+
+    .team-row:not(.team-header) {
+        display: grid;
+
+        grid-template-columns: 1fr auto;
+
+        min-height: 0;
+
+        padding: 0;
+
+        border: 1px solid var(--border);
+
+        border-radius: 18px;
+
+        margin-bottom: 12px;
+
+        overflow: hidden;
+
+        background: var(--surface);
+    }
+
+    .member {
+        grid-column: 1 / 2;
+
+        padding: 20px 18px 10px;
+    }
+
+    .work {
+        grid-column: 1 / -1;
+
+        padding: 8px 18px 20px;
+
+        font-size: 12px;
+    }
+
+    .rating {
+        grid-column: 2 / 3;
+        grid-row: 1;
+
+        align-self: center;
+
+        padding: 20px 16px;
+
+        font-size: 13px;
+        letter-spacing: 2px;
+    }
+
+    .member-number {
+        width: 28px;
+        height: 28px;
+    }
+
+    .team-end-text {
+        margin-top: 90px;
+    }
+
+    .end-title {
+        letter-spacing: -3px;
+    }
+
+    .end-subtitle {
+        letter-spacing: 4px;
+    }
+}
+
+/* Small phone */
+
+@media (max-width: 400px) {
+
+    .team-top h2 {
+        font-size: 34px;
+    }
+
+    .member strong {
+        font-size: 13px;
+    }
+
+    .rating {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+}
+
+</style>
+
+<script>
+
+/* =========================================================
+   DARK / LIGHT MODE
+   Default theme: LIGHT
+   ========================================================= */
+
+const teamSection = document.querySelector(".team-end");
+const themeToggle = document.getElementById("themeToggle");
+
+if (teamSection && themeToggle) {
+
+    /* Restore the saved theme, otherwise use light mode */
+
+    const savedTheme = localStorage.getItem("team-theme");
+
+    if (savedTheme === "dark") {
+        teamSection.classList.remove("light");
+    } else {
+        teamSection.classList.add("light");
+    }
+
+    themeToggle.addEventListener("click", () => {
+
+        teamSection.classList.toggle("light");
+
+        const isLight = teamSection.classList.contains("light");
+
+        localStorage.setItem(
+            "team-theme",
+            isLight ? "light" : "dark"
+        );
+
+    });
+}
+
+</script>
+```
