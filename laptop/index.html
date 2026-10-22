@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -504,6 +503,24 @@
       font-weight: 900;
     }
 
+    /* ĐIỂM BÙ TRỪ */
+
+    .tradeoff-section {
+      background: var(--surface);
+    }
+
+    .tradeoff-box {
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: white;
+    }
+
+    .tradeoff-box p {
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
     /* WHY CHOOSE IT */
 
     .why-section {
@@ -989,13 +1006,10 @@
             </h3>
 
             <ul class="review-list">
+              
               <li>
-                Giá 40.69 triệu đồng khá cao, nên so sánh khuyến mãi
-                và chính sách bảo hành trước khi mua.
-              </li>
-              <li>
-                Khi chơi game nặng, máy thường cần cắm sạc để đạt
-                hiệu năng cao và thời lượng pin sẽ giảm nhanh.
+                Khi sử dụng các tác vụ, phần mềm hoặc game yêu cầu hiệu năng cao,
+                máy thường cần cắm sạc để đạt hiệu năng cao và thời lượng pin sẽ giảm nhanh.
               </li>
               <li>
                 Quạt có thể ồn và nhiệt độ tăng khi CPU, GPU hoạt động
@@ -1005,12 +1019,25 @@
                 Màn hình OLED cần sử dụng hợp lý, tránh hiển thị nội dung
                 tĩnh ở độ sáng cao trong thời gian quá dài.
               </li>
-              <li>
-                Cần kiểm tra cấu hình RAM, khe SSD và thông số chính xác
-                của mã máy trước khi thanh toán.
-              </li>
+              
             </ul>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ĐIỂM BÙ TRỪ -->
+    <section class="content-section tradeoff-section" id="tradeoff">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Trade-off</div>
+          <h2>Điểm <span>bù trừ</span></h2>
+        </div>
+
+        <div class="tradeoff-box">
+          <p>
+            Với trọng lượng là 1.9kg thì có thể xem là khá nhẹ so với nhiều mẫu laptop gaming, nhưng điều đó lại là điểm trừ cho người dùng khi vác trong balo, bao gồm cả củ sạc của máy. Nhưng thay vào đó, máy lại mang trong mình một hệ thống tản nhiệt được cải tiến vừa giúp duy trì hiệu năng ổn định mà không gây tiếng ồn trong quá trình sử dụng lâu dài là điểm cộng trong mắt người dùng
+          </p>
         </div>
       </div>
     </section>
@@ -1056,14 +1083,7 @@
             </p>
           </article>
 
-          <article class="why-card">
-            <div class="why-number">04 / PORTABILITY</div>
-            <h3>Hiệu năng trong thân máy gọn</h3>
-            <p>
-              Trọng lượng khoảng 1.9kg giúp việc mang máy đi học,
-              đi làm hoặc di chuyển thuận tiện hơn.
-            </p>
-          </article>
+          <!-- ĐÃ XÓA CARD 04 / PORTABILITY THEO YÊU CẦU -->
 
           <article class="why-card">
             <div class="why-number">05 / LONG-TERM USE</div>
